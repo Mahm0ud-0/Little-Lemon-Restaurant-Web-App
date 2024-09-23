@@ -52,7 +52,7 @@ function Reservation() {
           {/* date & time */}
           <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-[300px]'><p className='w-full flex justify-between items-center'>date & time {formik.errors.date && formik.touched.date && <h4 className="text-red-500 text-sm">{formik.errors.date}</h4>}</p>
 
-            <input type="datetime-local" name='date'
+            <input aria-label='date and ime' type="datetime-local" name='date'
               value={formik.values.date}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -64,7 +64,7 @@ function Reservation() {
           {/* number of guests */}
           <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-[300px]'><p className='w-full flex justify-between items-center'>number of guests {formik.errors.guests && formik.touched.guests && <h4 className="text-red-500 text-sm">{formik.errors.guests}</h4>}</p>
 
-            <input type="number" name='guests'
+            <input aria-label='number of guests' type="number" name='guests'
               min={1}
               placeholder='number of guests'
               value={formik.values.guests}
@@ -80,8 +80,8 @@ function Reservation() {
         <div className='flex justify-between gap-3 flex-col sm:flex-row w-full'>
 
           {/* name */}
-          <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-[300px]'><p className='w-full flex justify-between items-center'>name {formik.errors.name && formik.touched.name && <h4 className="text-red-500 text-sm">{formik.errors.name}</h4>}</p>
-            <input type="text" name='name'
+          <label className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-[300px]'><p className='w-full flex justify-between items-center'>name {formik.errors.name && formik.touched.name && <h4 className="text-red-500 text-sm">{formik.errors.name}</h4>}</p>
+            <input aria-label='name' type="text" name='name'
               placeholder='your name'
               value={formik.values.name}
               onChange={formik.handleChange}
@@ -90,8 +90,8 @@ function Reservation() {
           </label>
 
           {/* email */}
-          <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-[300px]'><p className='w-full flex justify-between items-center'>email {formik.errors.email && formik.touched.email && <h4 className="text-red-500 text-sm">{formik.errors.email}</h4>}</p>
-            <input type="email" name='email'
+          <label className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-[300px]'><p className='w-full flex justify-between items-center'>email {formik.errors.email && formik.touched.email && <h4 className="text-red-500 text-sm">{formik.errors.email}</h4>}</p>
+            <input aria-label='email' type="email" name='email'
               placeholder='youremail@mail.com'
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -106,7 +106,7 @@ function Reservation() {
         <div className='flex justify-between mt-7 flex-col gap-5 sm:flex-row w-full'>
 
           {/* instructions */}
-          <textarea name="instructions" id="" rows="6"
+          <textarea aria-label='instructions' name="instructions" id="" rows="6"
             placeholder='instructions...'
             value={formik.values.instructions}
             onChange={formik.handleChange}
@@ -117,7 +117,7 @@ function Reservation() {
           <div className='sm:w-[300px] flex flex-col justify-between gap-3'>
 
 
-            <select name="occasion" onChange={formik.handleChange} value={formik.values.occasion} className='border-none outline-none w-full bg-primaryWhite p-2 px-3 rounded-2xl text-accent shadow-sm font-semibold'>
+            <select aria-label='occasion' name="occasion" onChange={formik.handleChange} value={formik.values.occasion} className='border-none outline-none w-full bg-primaryWhite p-2 px-3 rounded-2xl text-accent shadow-sm font-semibold'>
               <option value="" onChange={formik.handleChange} disabled>occasion</option>
               <option value="birthday">Birthday</option>
               <option value="anniversary">Anniversary</option>
@@ -128,7 +128,7 @@ function Reservation() {
             {/* seating radio */}
             <div className='flex flex-col justify-between gap-3'>
               <label className='flex items-center gap-6 text-lg cursor-pointer text-primaryBlack font-semibold'>
-                <input type="radio" name="seat" value='in'
+                <input aria-label='indoor seating' type="radio" name="seat" value='in'
                   onChange={formik.handleChange}
                   checked={formik.values.seat === 'in'}
                   className='w-7 h-7 accent-accent hover:accent-accent shadow-sm cursor-pointer' />
@@ -136,7 +136,7 @@ function Reservation() {
               </label>
 
               <label className='flex items-center gap-6 text-lg cursor-pointer text-primaryBlack font-semibold'>
-                <input type="radio" name="seat" value='out'
+                <input aria-label='outdoor seating' type="radio" name="seat" value='out'
                   onChange={formik.handleChange}
                   checked={formik.values.seat === 'out'}
                   className='w-7 h-7 accent-accent hover:accent-accent shadow-sm cursor-pointer' />
@@ -153,8 +153,8 @@ function Reservation() {
         <div className='flex justify-between mt-7 flex-col gap-3 sm:flex-row w-full'>
 
           {/* credit card */}
-          <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 w-full sm:w-[300px]'>credit card number
-            <input type="text" name='creditCard' placeholder='xxxx-xxxx-xxxx-xxxx'
+          <label className='flex flex-col text-primaryBlack font-semibold gap-1 w-full sm:w-[300px]'>credit card number
+            <input  aria-label='credit card number' type="text" name='creditCard' placeholder='xxxx-xxxx-xxxx-xxxx'
               value={formik.values.creditCard}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -166,8 +166,8 @@ function Reservation() {
 
           <div className='sm:w-[300px] flex flex-col gap-3 sm:flex-row justify-between'>
 
-            <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-32'>expiration date
-              <input type="text" name='expDate' placeholder='mm/yy'
+            <label className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-32'>expiration date
+              <input  aria-label='expiration date' type="text" name='expDate' placeholder='mm/yy'
                 value={formik.values.expDate}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -176,8 +176,8 @@ function Reservation() {
               {formik.errors.expDate && formik.touched.expDate && <h4 className="text-red-500 text-xs">{formik.errors.expDate}</h4>}
             </label>
 
-            <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-32'>cvv
-              <input type="text" name='cvv' placeholder='xxx'
+            <label className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-32'>cvv
+              <input  aria-label='cvv' type="text" name='cvv' placeholder='xxx'
                 value={formik.values.cvv}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}

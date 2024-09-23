@@ -126,15 +126,15 @@ function Order() {
             <form onSubmit={formik.handleSubmit} className='mt-7 lg:mt-0 w-full sm:w-3/4 lg:w-[45%] flex flex-col gap-6'>
               <div className='flex justify-between'>
                 <h3 className=' text-accent text-3xl font-semibold'>Total Price: </h3>
-                <h3 className=' text-secondary text-3xl font-bold'>{price.toFixed(2)} $</h3>
+                <h3  aria-label='total price' className=' text-secondary text-3xl font-bold'>{price.toFixed(2)} $</h3>
               </div>
 
               <textarea required name="instructions" id="" rows="4" placeholder='location details & instructions...' className='rounded-2xl outline-none border-none p-2 text-accent shadow-md w-full placeholder:opacity-70 placeholder:text-accent'></textarea>
 
 
               {/* email */}
-              <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-full'>email
-                <input type="email" name='email'
+              <label className='flex flex-col text-primaryBlack font-semibold gap-1 sm:w-full'>email
+                <input  aria-label='email' type="email" name='email'
                   placeholder='youremail@mail.com'
                   value={formik.values.email}
                   onChange={formik.handleChange}
@@ -147,8 +147,8 @@ function Order() {
 
 
               {/* credit card number */}
-              <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 w-full'>credit card number
-                <input type="text" placeholder='xxxx-xxxx-xxxx-xxxx'
+              <label className='flex flex-col text-primaryBlack font-semibold gap-1 w-full'>credit card number
+                <input aria-label='credit card number' type="text" placeholder='xxxx-xxxx-xxxx-xxxx'
                   name='creditCard'
                   value={formik.values.creditCard}
                   onChange={formik.handleChange}
@@ -162,8 +162,8 @@ function Order() {
               <div className='w-full flex flex-col md:flex-row justify-between'>
 
                 {/* exp date */}
-                <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 md:w-2/5'>expiration date
-                  <input type="text" placeholder='mm/yy'
+                <label className='flex flex-col text-primaryBlack font-semibold gap-1 md:w-2/5'>expiration date
+                  <input  aria-label='expiratoin date' type="text" placeholder='mm/yy'
                     name='expDate'
                     value={formik.values.expDate}
                     onChange={formik.handleChange}
@@ -175,8 +175,8 @@ function Order() {
                 </label>
 
                 {/* cvv */}
-                <label htmlFor="" className='flex flex-col text-primaryBlack font-semibold gap-1 md:w-2/5'>cvv
-                  <input type="text" placeholder='xxx'
+                <label className='flex flex-col text-primaryBlack font-semibold gap-1 md:w-2/5'>cvv
+                  <input aria-label='cvv' type="text" placeholder='xxx'
                     name='cvv'
                     value={formik.values.cvv}
                     onChange={formik.handleChange}
