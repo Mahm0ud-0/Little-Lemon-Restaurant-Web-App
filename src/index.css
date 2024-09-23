@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    @apply scroll-smooth transition !important
+}
+
+a:hover {
+    @apply text-secondary
+}
+
+.image-bg {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/restaurant.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+input {
+    @apply outline-none 
+}
+
+option {
+    @apply p-2 px-3 font-semibold
+}
+
+option:disabled {
+    display: none;
+}
+
+h2 {
+    @apply font-semibold
+}
+
+#orderCards {
+    scrollbar-width: thin;
+}
