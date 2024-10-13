@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../assets/logo.svg'
+import logo from '../assets/Logo.svg'
 import Button from './Button'
 
 function Navbar({ toggle, setToggle, closeMenu }) {
